@@ -1,0 +1,23 @@
+group = 'org.springframework.issues'
+version = '1.0.0.SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+    maven { url 'http://repo.spring.io/snapshot' }
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-context:4.1.4.RELEASE'
+    compile 'commons-logging:commons-logging:1.1.1'
+    compile 'log4j:log4j:1.2.17'
+    testCompile 'junit:junit:4.11'
+}
+
+[compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:all']
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
